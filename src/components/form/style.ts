@@ -17,7 +17,6 @@ export const Input = styled.input`
   padding: 10px 20px;
   border-radius: 100px;
   border: none;
-  font-size: 16px;
   font-weight: 400;
   background-color: #f6f6f6;
   color: #657593;
@@ -26,6 +25,11 @@ export const Input = styled.input`
 
   &::placeholder {
     color: #657593;
+  }
+
+  &:focus{
+    border: none;
+    outline: none;
   }
 `;
 
@@ -51,4 +55,32 @@ export const Label = styled.label`
   font-size: 13px;
   line-height: 15px;
   font-weight: 600;
+`;
+
+export const ErrorMessage = styled.span`
+  color: red;
+  font-size: 10px;
+  font-weight: 400;
+`;
+
+export const PasswordWrapper = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #f6f6f6;
+  border-radius: 100px;
+  border: none;
+`;
+
+export const ToggleButton = styled.button`
+  position: absolute;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #cc6237;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
