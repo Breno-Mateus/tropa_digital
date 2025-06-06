@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Form = styled.form`
   display: flex;
@@ -11,7 +11,7 @@ export const DivInput = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5px;
-`
+`;
 
 export const Input = styled.input`
   padding: 10px 20px;
@@ -19,19 +19,19 @@ export const Input = styled.input`
   border: none;
   font-size: 16px;
   font-weight: 400;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   color: #657593;
   font-size: 12px;
   line-height: 15px;
 
-  &::placeholder{
+  &::placeholder {
     color: #657593;
   }
 `;
 
 export const Button = styled.button`
   background-color: #cc6237;
-  color: #FFF;
+  color: #fff;
   border: none;
   border-radius: 100px;
   padding: 10px 25px;
@@ -47,7 +47,7 @@ export const Button = styled.button`
 `;
 
 export const Label = styled.label`
-  color: #CC6237;
+  color: #cc6237;
   font-size: 13px;
   line-height: 15px;
   font-weight: 600;

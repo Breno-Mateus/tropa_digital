@@ -5,14 +5,24 @@ const LoginForm = () => {
     <Form>
       <DivInput>
         <Label htmlFor="email">Email</Label>
-        <Input id="email" type="email" placeholder="seunome@seuservidor.com" required />
+        <Input
+          id="email"
+          type="email"
+          placeholder="seunome@seuservidor.com"
+          required
+        />
       </DivInput>
-      
+
       <DivInput>
         <Label htmlFor="password">Senha</Label>
-        <Input id="password" type="password" placeholder="Digite aqui" required />
+        <Input
+          id="password"
+          type="password"
+          placeholder="Digite aqui"
+          required
+        />
       </DivInput>
-      
+
       <Button type="submit">Enviar</Button>
     </Form>
   );

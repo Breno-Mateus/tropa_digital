@@ -1,12 +1,21 @@
-import { CardLogin, TextSection, ImageSection, Title, Text } from "./style";
+import {
+  BodyLogin,
+  CardLogin,
+  LoginContent,
+  IllustrationWrapper,
+  Title,
+  Text,
+} from "./style";
 import Logo from "../../assets/logo_login.png";
 import LoginForm from "../../components/form/form";
+import Monitoring from "../../assets/monitoring.png";
+
 const Login = () => {
   return (
-    <div>
+    <BodyLogin>
       <CardLogin>
-        <TextSection>
-          <img src={Logo} />
+        <LoginContent>
+          <img src={Logo} alt="Logo da tropa digital" />
 
           <div>
             <Title>Bem-vindo de volta</Title>
@@ -14,11 +23,13 @@ const Login = () => {
           </div>
 
           <LoginForm />
-        </TextSection>
+        </LoginContent>
 
-        <ImageSection></ImageSection>
+        <IllustrationWrapper>
+          <img src={Monitoring} alt="Ilustração de monitoramento" />
+        </IllustrationWrapper>
       </CardLogin>
-    </div>
+    </BodyLogin>
   );
 };
 
