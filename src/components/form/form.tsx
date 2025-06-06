@@ -14,10 +14,11 @@ import { useState } from "react";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { loginSchema } from "../../schema/loginSchema";
 import type { LoginData } from "../../schema/loginSchema";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
-
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -29,6 +30,7 @@ const LoginForm = () => {
 
   const onSubmit = (data: LoginData) => {
     console.log("Dados enviados:", data);
+    navigate("/dashboard");
   };
 
   const togglePassword = () => setShowPassword((prev) => !prev);
