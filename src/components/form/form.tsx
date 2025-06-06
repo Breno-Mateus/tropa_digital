@@ -1,13 +1,21 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Form, Input, Button, Label, DivInput, ErrorMessage, PasswordWrapper, ToggleButton } from "./style";
+import {
+  Form,
+  Input,
+  Button,
+  Label,
+  DivInput,
+  ErrorMessage,
+  PasswordWrapper,
+  ToggleButton,
+} from "./style";
 import { useState } from "react";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { loginSchema } from "../../schema/loginSchema";
 import type { LoginData } from "../../schema/loginSchema";
 
 const LoginForm = () => {
-
   const [showPassword, setShowPassword] = useState(false);
 
   const {
@@ -16,7 +24,7 @@ const LoginForm = () => {
     formState: { errors },
   } = useForm<LoginData>({
     resolver: zodResolver(loginSchema),
-    mode: 'onBlur',
+    mode: "onBlur",
   });
 
   const onSubmit = (data: LoginData) => {
@@ -49,10 +57,16 @@ const LoginForm = () => {
           />
 
           <ToggleButton type="button" onClick={togglePassword}>
-            {showPassword ? <IoEyeOffOutline size={16} /> : <IoEyeOutline size={16} />}
+            {showPassword ? (
+              <IoEyeOffOutline size={16} />
+            ) : (
+              <IoEyeOutline size={16} />
+            )}
           </ToggleButton>
         </PasswordWrapper>
-        {errors.password && <ErrorMessage>{errors.password.message}</ErrorMessage>}
+        {errors.password && (
+          <ErrorMessage>{errors.password.message}</ErrorMessage>
+        )}
       </DivInput>
 
       <Button type="submit">Enviar</Button>

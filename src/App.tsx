@@ -1,14 +1,16 @@
-import { GlobalStyles } from "./styles/globalStyles";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/login/login";
+import Dashboard from "./pages/dashboard/dashboard";
 
-function App() {
-
+const App = () => {
   return (
-    <>
-      <GlobalStyles />
-      <Login />     
-    </>
-  )
-}
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
 export default App;
