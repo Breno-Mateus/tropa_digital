@@ -6,15 +6,13 @@ import {
   TableBody,
   BodyRow,
   BodyCell,
+  ContainerStatus,
+  CircleStatus
 } from "./style";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { events } from "../../data/events";
-import { usePagination } from "../../hooks/usePagination";
+import type { TableProps } from "./type";
 
-const Table = () => {
-
-  const { currentItems } = usePagination(events, 2);
-
+const Table = ({ currentItems } : TableProps) => {
   return (
     <EventsTable>
       <TableHeader>
@@ -32,7 +30,12 @@ const Table = () => {
           <BodyRow key={event.id}>
             <BodyCell>{event.name}</BodyCell>
             <BodyCell>{event.total}</BodyCell>
-            <BodyCell>{event.status}</BodyCell>
+            <BodyCell>
+              <ContainerStatus>
+                <CircleStatus status={event.status}/>
+                {event.status}
+              </ContainerStatus>
+            </BodyCell>
             <BodyCell>{event.date}</BodyCell>
             <BodyCell>
               <BsThreeDotsVertical size={16} color="#CC6237" />

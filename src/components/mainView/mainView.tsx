@@ -4,7 +4,7 @@ import {
   DescriptionText,
   HighlightText,
   PageTitle,
-  ContentSection
+  ContentSection,
 } from "./style";
 import { useSectionStore } from "../../store/sectionStore";
 import CardContent from "../cardContent/cardContent";
@@ -12,16 +12,13 @@ import CardContent from "../cardContent/cardContent";
 const MainView = () => {
   const { selectedSection } = useSectionStore();
 
-  const title =
-    selectedSection === "Eventos" ? "Todos os eventos" : selectedSection;
-
   return (
     <MainContent>
       <PageHeader>
         <DescriptionText>
           Bem vindo de volta, <HighlightText>Kaique Steck</HighlightText>
         </DescriptionText>
-        <PageTitle>{title}</PageTitle>
+        <PageTitle>{selectedSection}</PageTitle>
       </PageHeader>
 
       <ContentSection>

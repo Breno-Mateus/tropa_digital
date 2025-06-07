@@ -15,6 +15,7 @@ import { events } from "../../data/events";
 
 const CardContent = () => {
   const {
+    currentItems,
     currentPage,
     totalPages,
     goToPage,
@@ -36,7 +37,7 @@ const CardContent = () => {
         </AddEventButton>
       </CardActions>
 
-      <Table />
+      <Table currentItems={currentItems}/>
 
       <PaginationControls
         currentPage={currentPage}
