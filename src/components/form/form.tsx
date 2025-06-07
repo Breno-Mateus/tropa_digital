@@ -31,7 +31,7 @@ const LoginForm = () => {
   const onSubmit = (data: LoginData) => {
     console.log("Dados enviados:", data);
     localStorage.setItem("authToken", "fake_token");
-    navigate("/dashboard");
+    navigate("/workspace");
   };
 
   const togglePassword = () => setShowPassword((prev) => !prev);

@@ -20,10 +20,10 @@ import { RiTeamLine } from "react-icons/ri";
 import { HiOutlineUser } from "react-icons/hi";
 import { AiOutlinePoweroff, AiOutlineTeam } from "react-icons/ai";
 import User from "../../assets/user.png";
-import { useState } from "react";
+import { useSectionStore } from "../../store/sectionStore";
 
 const SideBar = () => {
-  const [selectedSection, setSelectedSection] = useState("Eventos");
+  const {selectedSection, setSelectedSection} = useSectionStore();
 
   return (
     <SidebarContainer>
