@@ -14,10 +14,9 @@ import {
   UserButton,
   UserImage,
   Overlay,
-  IconsMenu
+  IconsMenu,
 } from "./style";
 import Hamburger from "hamburger-react";
-
 import Logo from "../../assets/logo_sidebar.png";
 import SidebarButton from "../sidebarButton/sidebarButton";
 import { RxDashboard } from "react-icons/rx";
@@ -27,11 +26,21 @@ import { HiOutlineUser } from "react-icons/hi";
 import { AiOutlinePoweroff, AiOutlineTeam } from "react-icons/ai";
 import User from "../../assets/user.png";
 import { useSectionStore } from "../../store/sectionStore";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 
 const HeaderMobile = () => {
   const [isOpen, setOpen] = useState(false);
-
   const { selectedSection, setSelectedSection } = useSectionStore();
+  const { isLoggedIn, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
+
+  if (!isLoggedIn) return null;
 
   return (
     <>
@@ -57,7 +66,7 @@ const HeaderMobile = () => {
                 color="#cc6237"
               />
 
-              <img src={Logo} alt="Logo da tropa digital"/>
+              <img src={Logo} alt="Logo da tropa digital" />
             </IconsMenu>
 
             <SidebarMenu>
@@ -121,7 +130,7 @@ const HeaderMobile = () => {
               <NameUser>Alterar dados</NameUser>
             </UserButton>
 
-            <UserButton>
+            <UserButton onClick={handleLogout}>
               <AiOutlinePoweroff size={15} />
               <NameUser>Sair</NameUser>
             </UserButton>

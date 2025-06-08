@@ -15,10 +15,13 @@ import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { loginSchema } from "../../schema/loginSchema";
 import type { LoginData } from "../../schema/loginSchema";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { login } = useAuth();
   const {
     register,
     handleSubmit,
@@ -28,10 +31,16 @@ const LoginForm = () => {
     mode: "onBlur",
   });
 
-  const onSubmit = (data: LoginData) => {
-    console.log("Dados enviados:", data);
-    localStorage.setItem("authToken", "fake_token");
-    navigate("/workspace");
+  const onSubmit = async (data: LoginData) => {
+    setIsLoading(true);
+    const result = await login(data.email, data.password);
+    setIsLoading(false);
+    
+    if (result.success) {
+      navigate("/workspace");
+    } else {
+      alert(result.error);
+    }
   };
 
   const togglePassword = () => setShowPassword((prev) => !prev);
@@ -72,7 +81,9 @@ const LoginForm = () => {
         )}
       </DivInput>
 
-      <Button type="submit">Enviar</Button>
+      <Button type="submit" disabled={isLoading}>
+        {isLoading ? "Carregando..." : "Enviar"}
+      </Button>
     </Form>
   );
 };

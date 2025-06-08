@@ -21,9 +21,20 @@ import { HiOutlineUser } from "react-icons/hi";
 import { AiOutlinePoweroff, AiOutlineTeam } from "react-icons/ai";
 import User from "../../assets/user.png";
 import { useSectionStore } from "../../store/sectionStore";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 
 const SideBar = () => {
-  const {selectedSection, setSelectedSection} = useSectionStore();
+  const { selectedSection, setSelectedSection } = useSectionStore();
+  const { isLoggedIn, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
+
+  if (!isLoggedIn) return null;
 
   return (
     <SidebarContainer>
@@ -58,7 +69,7 @@ const SideBar = () => {
               selected={selectedSection === "Inscrições"}
               onClick={() => setSelectedSection("Inscrições")}
             />
-          </Menu> 
+          </Menu>
         </SidebarMenu>
       </SidebarHeader>
 
@@ -79,7 +90,7 @@ const SideBar = () => {
           <NameUser>Alterar dados</NameUser>
         </UserButton>
 
-        <UserButton>
+        <UserButton onClick={handleLogout}>
           <AiOutlinePoweroff size={15} />
           <NameUser>Sair</NameUser>
         </UserButton>
