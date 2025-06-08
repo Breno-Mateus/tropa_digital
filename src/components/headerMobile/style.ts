@@ -1,24 +1,56 @@
 import styled from "styled-components";
 
-export const SidebarContainer = styled.aside`
+export const HeaderContainer = styled.header`
+  display: none;
+  background-color: #ffffff;
+  padding: 10px;
+  border-bottom: 1px solid #09428f2b;
+  width: 100vw;
+
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: flex-start;
+  }
+`;
+
+export const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 10;
+`;
+
+export const SidebarContainer = styled.aside<{ isOpen: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: #ffffff;
   border-right: 1px solid #0000001a;
-  padding: 30px 15px;
+  padding: 10px 15px;
   width: 210px;
   height: 100vh;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  transition: transform 500ms ease-in-out;
+  transform: ${({ isOpen }) => (isOpen ? "translateX(0)" : "translateX(100%)")};
 `;
 
 export const SidebarHeader = styled.header`
   display: flex;
   flex-direction: column;
   gap: 30px;
+`;
+
+export const IconsMenu = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 `;
 
 export const SidebarFooter = styled.footer`
@@ -39,7 +71,7 @@ export const MenuTitle = styled.p`
   font-weight: 900;
   line-height: 15px;
   letter-spacing: 12%;
-  color: #A3A3A3;
+  color: #a3a3a3;
   padding-left: 10px;
 `;
 
@@ -61,7 +93,7 @@ export const TextLabel = styled.div`
 `;
 
 export const NameUser = styled.p`
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   line-height: 15px;
 `;

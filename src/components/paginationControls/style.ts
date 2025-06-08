@@ -5,6 +5,10 @@ export const PaginationContainer = styled.div`
   align-items: center;
   justify-content: flex-end;
   gap: 10px;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `;
 
 export const PaginationButton = styled.button`
@@ -26,6 +30,10 @@ export const PaginationButton = styled.button`
     cursor: not-allowed;
     opacity: 0.6;
   }
+
+  @media (max-width: 768px) {
+    font-size: 10px;
+  }
 `;
 
 export const ActivePageButton = styled.button`
@@ -41,5 +49,9 @@ export const ActivePageButton = styled.button`
   &.active{
     background-color: #CC6237;
     color: #FFFFFF;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 10px;
   }
 `;

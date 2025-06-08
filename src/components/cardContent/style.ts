@@ -15,6 +15,10 @@ export const CardActions = styled.div`
   display: flex;
   justify-content: flex-end;
   gap: 10px;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `
 
 export const Search = styled.div`
@@ -26,6 +30,10 @@ export const Search = styled.div`
   align-items: center;
   gap: 10px;
   color: #00000033;
+
+  @media (max-width: 768px) {
+    padding: 5px 10px;
+  }
 `
 
 export const SearchInput = styled.input`
@@ -43,6 +51,10 @@ export const SearchInput = styled.input`
   &:focus{
     border: none;
     outline: none;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 12px;
   }
 `
 
@@ -67,4 +79,8 @@ export const SpanButton = styled.span`
   font-weight: 500;
   line-height: 15px;
   color: #FFFFFF;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `

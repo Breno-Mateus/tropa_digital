@@ -14,6 +14,11 @@ export const HeaderCell = styled.th`
   border-bottom: 1px solid #cc62371a;
   line-height: 15px;
   padding: 12px 20px 12px 0px;
+
+  @media (max-width: 768px) {
+    font-size: 11px;
+    text-align: center;
+  }
 `;
 
 export const TableBody = styled.tbody``;
@@ -28,6 +33,12 @@ export const BodyCell = styled.td`
   color: #657593;
   padding: 12px 20px 12px 0px;
   border-bottom: 1px solid #cc62371a;
+
+  @media (max-width: 768px) {
+    font-size: 11px;
+    text-align: center;
+    padding: 5px;
+  }
 `;
 
 export const ContainerStatus = styled.div`

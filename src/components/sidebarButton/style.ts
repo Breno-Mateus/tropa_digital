@@ -15,4 +15,8 @@ export const ButtonText = styled.span`
   font-size: 14px;
   font-weight: 500;
   line-height: 15px;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
