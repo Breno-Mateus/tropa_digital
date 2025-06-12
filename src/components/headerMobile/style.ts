@@ -30,7 +30,6 @@ export const SidebarContainer = styled.aside<{ isOpen: boolean }>`
   justify-content: space-between;
   background-color: #ffffff;
   border-right: 1px solid #0000001a;
-  padding: 10px 15px;
   width: 210px;
   height: 100vh;
   position: absolute;
@@ -53,17 +52,22 @@ export const IconsMenu = styled.div`
   gap: 10px;
 `;
 
+export const Logo = styled.img`
+  padding: 10px 15px;
+`;
+
 export const SidebarFooter = styled.footer`
   display: flex;
   flex-direction: column;
   gap: 5px;
-  padding-top: 38px;
+  padding: 38px 15px 10px 15px;
   border-top: 1px solid #0000001a;
 `;
 
 export const SidebarMenu = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 10px 15px;
 `;
 
 export const MenuTitle = styled.p`

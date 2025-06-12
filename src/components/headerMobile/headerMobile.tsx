@@ -15,9 +15,10 @@ import {
   UserImage,
   Overlay,
   IconsMenu,
+  Logo
 } from "./style";
 import Hamburger from "hamburger-react";
-import Logo from "../../assets/logo_sidebar.png";
+import LogoSidebar from "../../assets/logo_sidebar.png";
 import SidebarButton from "../sidebarButton/sidebarButton";
 import { RxDashboard } from "react-icons/rx";
 import { MdOutlineCalendarMonth } from "react-icons/md";
@@ -66,7 +67,7 @@ const HeaderMobile = () => {
                 color="#cc6237"
               />
 
-              <img src={Logo} alt="Logo da tropa digital" />
+              <Logo src={LogoSidebar} alt="Logo da tropa digital" />
             </IconsMenu>
 
             <SidebarMenu>
